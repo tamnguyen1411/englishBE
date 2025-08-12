@@ -4,7 +4,10 @@
   "main": "app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "start": "cross-env NODE_ENV=production pm2 start ./build/src/app.js -i 5 --attach --watch | node_modules\\.bin\\bunyan",
+    "build": "ttsc -p ."
+
   },
   "author": "",
   "license": "ISC",
